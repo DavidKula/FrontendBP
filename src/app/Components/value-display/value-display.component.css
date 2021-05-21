@@ -1,0 +1,20 @@
+.v-display {
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #303030;
+    padding: 1px;
+    height: 100%;
+    width: 100%;
+}
+
+.value {
+    color: coral;
+    font-size: 20px;
+    text-align: center;
+}
+
+.header {
+    font-weight: bold;
+    color: snow;
+    text-align: center;
+}

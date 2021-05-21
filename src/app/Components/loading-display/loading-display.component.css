@@ -1,0 +1,8 @@
+.loading-display {
+    left: 50%;
+    padding: 30px;
+}
+
+mat-spinner {
+    left: 45%;
+}

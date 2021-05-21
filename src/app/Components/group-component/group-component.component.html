@@ -1,0 +1,5 @@
+<div *ngIf="groupData">
+    <div *ngFor="let player of groupData.players" class="player-part">
+        <player-card [player]="player"></player-card>
+    </div>
+</div>

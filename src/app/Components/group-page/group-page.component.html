@@ -1,0 +1,54 @@
+<div class="group-page-content">
+    <h1 class="header">Enter group code</h1>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Enter Group code</mat-label>
+                        <input matInput placeholder="..." class="group-input" [formControl]="groupCode">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                    <region-picker [formControl]="region"></region-picker>
+                </div>
+                <div class="col-md-2">
+                    <mat-form-field class="dungeon-selector">
+                        <mat-label>Dungeon</mat-label>
+                        <mat-select [formControl]="dungeonCode">
+                          <mat-option *ngFor="let dung of dungeonTypes" [value]="dung">
+                            {{dung}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div class="col-md-1">
+                    <input matInput type="number" placeholder="-" class="dungeon-diff" [formControl]="dungeonDifficulty">
+                </div>
+                <div class="col-md-1">
+                    <button mat-raised-button color="primary" class="calculate-btn" (click)="onCalculateClick()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" *ngIf="loading">
+       <loading-display></loading-display>
+    </div>
+    <div class="section blue" *ngIf="groupData">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <value-display class="value-display" header="Average score" [value]="groupData.groupScoreAvg"></value-display>
+                </div>
+                <div class="col-md-6"> 
+                    <value-display class="value-display" header="Success" [value]="groupData.successProbability"></value-display>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section blue" *ngIf="groupData">
+        <group-component [groupData]="groupData"></group-component>
+    </div>
+</div>

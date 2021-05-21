@@ -1,0 +1,29 @@
+<div class="group-page-content">
+    <h1 class="header">Enter player name with realm</h1>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Enter "playerName"-"realm"</mat-label>
+                        <input matInput placeholder="..." class="group-input" [formControl]="playerName">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <region-picker [formControl]="region"></region-picker>
+                </div>
+                <div class="col-md-1">
+                    <button mat-raised-button color="primary" class="calculate-btn" (click)="onFindClick()">Find</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" *ngIf="loading">
+        <loading-display></loading-display>
+     </div>
+    <div class="section blue" *ngIf="player">
+        <player-card [player]="player"></player-card>
+    </div>
+</div>
+

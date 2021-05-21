@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card horde">
+        <div class="row">
+            <div class="col-md-2">
+            <img class="image" [src]="this.player.image">
+            </div>
+            <div class="col-md-3 player-name" >
+                {{ this.player.playerName }}
+            </div>
+            <div class="col-md-6">
+                <div class="container">
+                    <div class="row">
+                        <value-display class="col-md-6" header="Item level" [value]="this.player.itemLevel"></value-display>
+                        <value-display class="col-md-6" header="Score" [value]="this.player.score"></value-display>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+</div>
